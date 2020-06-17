@@ -2,10 +2,13 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import MainTabScreen from './screens/MainTabScreen';
 
-// import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {DrawerContent} from './screens/DrawerContent';
+
+import MainTabScreen from './screens/MainTabScreen';
+import SupportScreen from './screens/SupportScreen';
+import SettingScreen from './screens/SettingScreen';
+import BookmarkScreen from './screens/BookmarkScreen';
 
 // implement Drawer constaince
 const Drawer = createDrawerNavigator();
@@ -13,9 +16,11 @@ const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={MainTabScreen} />
-        {/* <Drawer.Screen name="Details" component={DetailsStackScreen} /> */}
+      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
+        <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+        <Drawer.Screen name="SupportScreen" component={SupportScreen} />
+        <Drawer.Screen name="SettingScreen" component={SettingScreen} />
+        <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
