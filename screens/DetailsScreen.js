@@ -13,10 +13,10 @@ const DetailsScreen = ({navigation}) => {
       {/* go back  */}
       <Button title="Go BACK!!!" onPress={() => navigation.goBack()} />
       {/* go to the first screen stack */}
-      <Button
+      {/* <Button
         title="Go to the first screen "
         onPress={() => navigation.popToTop()}
-      />
+      /> */}
     </View>
   );
 };
