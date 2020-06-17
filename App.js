@@ -37,16 +37,15 @@ const HomeStackScreen = ({navigation}) => (
       options={{
         title: 'Overview',
         // add icon to the left
-        headerLeft: () => (
-          <TouchableOpacity
+        headerRight: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={30}
+            style={{paddingLeft: 20}}
+            backgroundColor="#009387"
             onPress={() => {
               navigation.openDrawer();
-            }}>
-            <Image
-              style={{width: 30, height: 30, marginLeft: 20}}
-              source={require('./assets/hamburger.png')}
-            />
-          </TouchableOpacity>
+            }}></Icon.Button>
         ),
       }}
     />
@@ -71,16 +70,15 @@ const DetailsStackScreen = ({navigation}) => (
       component={DetailsScreen}
       // apple styles to header individual
       options={{
-        headerLeft: () => (
-          <TouchableOpacity
+        headerRight: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={30}
+            style={{paddingLeft: 20}}
+            backgroundColor="#009387"
             onPress={() => {
               navigation.openDrawer();
-            }}>
-            <Image
-              style={{width: 30, height: 30, marginLeft: 20}}
-              source={require('./assets/hamburger.png')}
-            />
-          </TouchableOpacity>
+            }}></Icon.Button>
         ),
       }}
     />
